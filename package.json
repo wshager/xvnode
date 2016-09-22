@@ -1,6 +1,6 @@
 {
   "name": "xvnode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Lazy DOM Level 3 compatible VNODE",
   "main": "./lib/xvnode",
   "files": [
@@ -18,12 +18,12 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wshager/l3n.git"
+    "url": "git+https://github.com/wshager/xvnode.git"
   },
   "author": "W.S. Hager",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/wshager/l3n/issues"
+    "url": "https://github.com/wshager/xvnode/issues"
   },
-  "homepage": "https://github.com/wshager/l3n#readme"
+  "homepage": "https://github.com/wshager/xvnode#readme"
 }
