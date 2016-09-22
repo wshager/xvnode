@@ -1,11 +1,11 @@
-import { Indexed, Seq } from 'immutable';
+import { Seq } from 'immutable';
 
 export function isNode(maybe){
 	return !!(maybe && maybe._isNode);
 }
 
 // go up the prototype chain to overwrite toString...
-Indexed.prototype.toString = function(){
+Seq.prototype.constructor.Indexed.prototype.toString = function(){
 	if(!this._isNode) return this.__toString("[","]");
 	return serialize(this);
 };

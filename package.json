@@ -1,6 +1,6 @@
 {
   "name": "xvnode",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Lazy DOM Level 3 compatible VNode",
   "main": "./lib/xvnode",
   "files": [
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/wshager/xvnode/issues"
   },
-  "homepage": "https://github.com/wshager/xvnode#readme"
+  "homepage": "https://github.com/wshager/xvnode#readme",
+  "keywords": [
+    "vnode"
+  ]
 }
