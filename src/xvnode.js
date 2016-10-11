@@ -1,11 +1,11 @@
 import { Seq } from 'immutable';
 
-export function isNode(maybe){
+export function _isNode(maybe){
 	return !!(maybe && maybe._isNode);
 }
 
 // go up the prototype chain to overwrite toString...
-Seq.prototype.constructor.Indexed.prototype.toString = function(){
+Seq.Indexed.prototype.toString = function(){
 	if(!this._isNode) return this.__toString("[","]");
 	return serialize(this);
 };
@@ -18,11 +18,26 @@ export class QName {
 	}
 }
 
+export function _isQName(maybe){
+	return !!(maybe && maybe._isQName);
+}
+
 export class Node extends Seq {
 	constructor(type, name, attrs, children) {
-		super(Seq.isSeq(children) ? children.toArray() : children instanceof Array ? children : [children]);
+		if(_isNode(children)){
+			super([children]);
+		} else if(Seq.isSeq(children)){
+			super(children.toArray());
+		} else if(children instanceof Array) {
+			super(children);
+		} else if(type==1){
+			super([text(children)]);
+		} else {
+			// value
+			super([children.toString()]);
+		}
 		this.forEach(function(_) {
-			if (isNode(_)) _._parent = this;
+			if (_isNode(_)) _._parent = this;
 		},this);
 		this._name = name;
 		this._attrs = attrs;
