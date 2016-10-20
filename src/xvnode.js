@@ -41,6 +41,7 @@ export class Node extends Seq {
 		},this);
 		this._name = name;
 		this._attrs = attrs;
+		this._isSeq = false;
 		this._isNode = true;
 		this._type = type;
 		this._cache = {}; // for select by name
@@ -113,8 +114,8 @@ function serialize(node,indent) {
 	}
 }
 
-export function element($qname, $children) {
-	return new Node(1, $qname, null, $children);
+export function element($qname, ... $children) {
+	return new Node(1, $qname, null, $children.length == 1 ? $children[0] : $children);
 }
 
 export function attribute($qname, $value) {
