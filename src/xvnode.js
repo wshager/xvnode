@@ -1,11 +1,11 @@
-import { Seq } from 'immutable';
+import { Seq, _isSeq } from 'xvseq';
 
 export function _isNode(maybe){
 	return !!(maybe && maybe._isNode);
 }
 
 // go up the prototype chain to overwrite toString...
-Seq.Indexed.prototype.toString = function(){
+Seq.prototype.toString = function(){
 	if(!this._isNode) return this.__toString("[","]");
 	return serialize(this);
 };
@@ -26,7 +26,7 @@ export class Node extends Seq {
 	constructor(type, name, attrs, children) {
 		if(_isNode(children)){
 			super([children]);
-		} else if(Seq.isSeq(children)){
+		} else if(_isSeq(children)){
 			super(children.toArray());
 		} else if(children instanceof Array) {
 			super(children);
