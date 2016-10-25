@@ -1,6 +1,6 @@
 {
   "name": "xvnode",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Lazy DOM Level 3 compatible VNode",
   "main": "./lib/xvnode",
   "files": [
@@ -10,8 +10,7 @@
     "lib": "./lib"
   },
   "dependencies": {
-    "immutable": "^3.8.1",
-    "xvseq": "^0.1.3"
+    "xvseq": "^0.1.4"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
