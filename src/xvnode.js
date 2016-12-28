@@ -27,7 +27,11 @@ export class Node extends Seq {
 		if(_isNode(children)){
 			super([children]);
 		} else if(_isSeq(children)){
-			super(children.toArray());
+			var a = children.toArray();
+			if(type < 3) {
+				a = a.map(_ => _isNode(_) ? _ : text(_));
+			}
+			super(a);
 		} else if(children instanceof Array) {
 			super(children);
 		} else if(type==1){

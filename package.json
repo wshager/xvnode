@@ -1,6 +1,6 @@
 {
   "name": "xvnode",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Lazy DOM Level 3 compatible VNode",
   "main": "./lib/xvnode",
   "files": [
