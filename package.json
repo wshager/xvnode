@@ -10,7 +10,7 @@
     "lib": "./lib"
   },
   "dependencies": {
-    "xvseq": "^0.1.6"
+    "xvseq": "*"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0"
